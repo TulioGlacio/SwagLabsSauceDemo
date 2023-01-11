@@ -1,5 +1,3 @@
-import 'cypress'
-
 class CheckoutPage {
     public firstNameField = '#first-name';
     public lastNameField = '#last-name';

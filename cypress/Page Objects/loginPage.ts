@@ -1,14 +1,18 @@
-import 'cypress'
-
 class loginPage {
     public emailField = '#user-name';
     public passwordField = '#password';
-    public loginButton = '.btn_action';
+    public loginButton = '#login-button';
     public errorMessage = '.error-button';
     public linkSignUp = '[href="/sign_up"]';
 
-    login(email: string, password: string) {
-        cy.get(this.emailField).type(email);
+    // forceVisit(url: string){
+    //     cy.window().then(win => {
+    //         return win.open(url, '_self'); 
+    //       });
+    // }
+
+    login(loginName: string, password: string) {
+        cy.get(this.emailField).type(loginName);
         cy.get(this.passwordField).type(password);
         cy.get(this.loginButton).click();
     }
