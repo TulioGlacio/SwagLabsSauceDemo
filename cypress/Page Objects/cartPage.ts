@@ -1,5 +1,3 @@
-import 'cypress'
-
 class CartPage {
     public productsInCart = '.cart_item';
     public productName = '.inventory_item_name';
@@ -8,7 +6,7 @@ class CartPage {
     public checkOut = '.btn_action.checkout_button';
 
     removeProduct(productName: string) {
-        cy.get(this.productsInCart).contains(productName).find(this.removeButton).click();
+        cy.get(this.productsInCart).contains(productName).siblings().contains('Remove').click();
     }
 
     // getProductNames() {

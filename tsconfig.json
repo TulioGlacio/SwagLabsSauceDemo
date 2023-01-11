@@ -9,6 +9,8 @@
     "noImplicitThis": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": "https://www.saucedemo.com"
   },
+  "include": ["**/*.ts"]
 }

@@ -1,13 +1,12 @@
-import 'cypress'
-
 class productPage {
     public products = '.inventory_item';
     public addToCartButton = '.btn_primary.btn_inventory';
     public shoppingCart = '.shopping_cart_container';
-    public logoutButton = '.bm-burger-button';
+    public menuButton = '.bm-burger-button';
+    public logoutButton = '#logout_sidebar_link';
 
-    addToCart(productName: string) {
-        cy.get(this.products).contains(productName).find(this.addToCartButton).click();
+    addToCart(productIndex: number) {
+        cy.get(this.products).eq(productIndex).contains('Add to cart').click()
     }
 
     openShoppingCart() {
@@ -15,6 +14,7 @@ class productPage {
     }
     
     logout() {
+        cy.get(this.menuButton).click();
         cy.get(this.logoutButton).click();
     }
 }
