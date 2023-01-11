@@ -1,5 +1,4 @@
-{
-  "compilerOptions": {
+{  "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
     "lib": ["es6", "dom"],
@@ -12,10 +11,4 @@
     "strictPropertyInitialization": true,
     "noEmit": true
   },
-  "include": [
-    "./cypress/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
 }
