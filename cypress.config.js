@@ -8,6 +8,6 @@ module.exports = defineConfig({
   },
   chromeWebSecurity: false
   env: {
-    password : ''
+    password : '' // enter password in base64 coding
   }
 });
