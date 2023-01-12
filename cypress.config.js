@@ -7,4 +7,7 @@ module.exports = defineConfig({
     baseUrl: 'https://www.saucedemo.com'
   },
   chromeWebSecurity: false
+  env: {
+    password : ''
+  }
 });
