@@ -6,7 +6,7 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://www.saucedemo.com'
   },
-  chromeWebSecurity: false
+  chromeWebSecurity: false,
   env: {
     password : 'c2VjcmV0X3NhdWNl' // enter password in base64 coding
   },
