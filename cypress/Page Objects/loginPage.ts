@@ -13,7 +13,7 @@ class loginPage {
 
     login(loginName: string, password: string) {
         cy.get(this.emailField).type(loginName);
-        cy.get(this.passwordField).type(password);
+        cy.get(this.passwordField).type(atob(password));
         cy.get(this.loginButton).click();
     }
 
