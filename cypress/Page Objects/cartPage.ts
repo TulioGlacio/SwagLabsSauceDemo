@@ -6,7 +6,7 @@ class CartPage {
     public checkOut = '.btn_action.checkout_button';
 
     removeProduct(productName: string) {
-        cy.get(this.productsInCart).contains(productName).siblings().contains('Remove').click();
+        cy.get(this.productsInCart).contains(productName).siblings().find(this.removeButton).click();
     }
 
     // getProductNames() {

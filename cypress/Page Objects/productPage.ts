@@ -1,12 +1,13 @@
 class productPage {
     public products = '.inventory_item';
-    public addToCartButton = '.btn_primary.btn_inventory';
+    public addToCartButton = '.btn_primary ';
     public shoppingCart = '.shopping_cart_container';
     public menuButton = '.bm-burger-button';
     public logoutButton = '#logout_sidebar_link';
+    public productNameArray : string[] = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt','Sauce Labs Fleece Jacket','Sauce Labs Onesie','Test.allTheThings() T-Shirt (Red)'];
 
-    addToCart(productIndex: number) {
-        cy.get(this.products).eq(productIndex).contains('Add to cart').click()
+    addToCart(productName: string) {
+        cy.get(this.products).find(this.addToCartButton).eq(this.productNameArray.indexOf(productName)).click()
     }
 
     openShoppingCart() {
