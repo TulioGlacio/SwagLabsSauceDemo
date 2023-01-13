@@ -9,7 +9,7 @@ const password: string = Cypress.env('password');
 
 describe ('E2E tests',()=>{
     
-    before(()=>{
+    beforeEach(()=>{
         cy.visit('/');
     })
 
