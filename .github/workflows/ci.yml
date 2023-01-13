@@ -13,4 +13,5 @@ jobs:
     - name: Build TypeScript files
       run: npx tsc
     - name: Start Cypress test
-      run: npx cypress run --browser chrome
+      run: CYPRESS_password=${{ secrets.password }} npx cypress run
+ 
