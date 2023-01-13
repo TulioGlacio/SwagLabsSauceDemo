@@ -11,4 +11,4 @@ jobs:
     - name: Build TypeScript files
       run: npx tsc
     - name: Start Cypress test
-      run: npx cypress run
+      run: npx cypress run --ci-build-id=BUILD_ID --browser chrome
