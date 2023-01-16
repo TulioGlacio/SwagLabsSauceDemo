@@ -4,6 +4,9 @@ import cartPage from "../Page Objects/cartPage";
 import checkoutPage from "../Page Objects/checkoutPage";
 
 const password: string = Cypress.env('password');
+const firstName: string = Cypress.env('firstName');
+const lastName: string = Cypress.env('lastName');
+const postalCode: string = Cypress.env('postalCode');
 
 
 
@@ -15,7 +18,7 @@ describe ('E2E tests',()=>{
         cy.visit('/');
         
             // Logging in
-        loginPage.login('standard_user', 'secret_sauce');
+        loginPage.login('standard_user', password);
 
     })
 
@@ -31,7 +34,7 @@ describe ('E2E tests',()=>{
   
             // Checkout
         cartPage.checkOutCart();
-        checkoutPage.fillForm('John', 'Doe', '11111');
+        checkoutPage.fillForm(firstName, lastName, postalCode);
         checkoutPage.continue();
         checkoutPage.finish();
         
