@@ -8,6 +8,9 @@ module.exports = defineConfig({
   },
   chromeWebSecurity: false,
   env: {
-    password : ''
+    password : '',
+    firstName: 'John',
+    lastName: 'Doe',
+    postalCode; '11111'
   },
 });
