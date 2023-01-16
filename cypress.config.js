@@ -11,6 +11,6 @@ module.exports = defineConfig({
     password : '',
     firstName: 'John',
     lastName: 'Doe',
-    postalCode; '11111'
+    postalCode: '11111'
   },
 });
