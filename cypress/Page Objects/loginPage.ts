@@ -5,12 +5,6 @@ class loginPage {
     public errorMessage = '.error-button';
     public linkSignUp = '[href="/sign_up"]';
 
-    // forceVisit(url: string){
-    //     cy.window().then(win => {
-    //         return win.open(url, '_self'); 
-    //       });
-    // }
-
     login(loginName: string, password: string) {
         cy.get(this.emailField).type(loginName);
         cy.get(this.passwordField).type(password, {log: false});

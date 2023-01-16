@@ -40,6 +40,52 @@ describe ('E2E tests',()=>{
         
     })
 
+    it('Should login, add all products to cart, checkout and purchase', ()=>{
+
+            // Adding everything to cart
+        productPage.addAllToCart();
+
+            // Opening cart
+        productPage.openShoppingCart();
+
+            // Checkout
+        cartPage.checkOutCart();
+        checkoutPage.fillForm(firstName, lastName, postalCode);
+        checkoutPage.continue();
+        checkoutPage.finish();
+
+    })
+
+    it('Should login, add products to cart, remove product, checkout without first name and see proper error', ()=>{
+        
+        // Adding products to the cart
+    productPage.addToCart('Sauce Labs Backpack');
+    productPage.addToCart('Sauce Labs Bike Light');
+
+        // Opening cart
+    productPage.openShoppingCart();
+
+        // Checkout
+    cartPage.checkOutCart();
+    
+        // Filling data withou first name and checking error
+    checkoutPage.fillFormWithoutFirstName(lastName,postalCode);
+    checkoutPage.continue();
+    checkoutPage.checkErrorMessage('Error: First Name is required');
+
+        // Filling data withou last name and checking error
+    checkoutPage.fillFormWithoutLastName(firstName,postalCode);
+    checkoutPage.continue();
+    checkoutPage.checkErrorMessage('Error: Last Name is required');
+
+        // Filling data withou first name and checking error
+    checkoutPage.fillFormWithoutPostalCode(firstName,lastName);
+    checkoutPage.continue();
+    checkoutPage.checkErrorMessage('Error: Postal Code is required');
+    
+    
+})
+
     it('Should login and assert if all sorting work correctly', ()=>{
 
             // Sorting Products by name From Z to A

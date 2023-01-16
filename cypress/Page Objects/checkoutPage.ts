@@ -4,12 +4,30 @@ class CheckoutPage {
     public postalCodeField = '#postal-code';
     public continueButton = '.cart_button';
     public finishButton = '.btn_action.cart_button';
-    public errorMessage = '.error-button';
+    public errorMessage = '.error-message-container';
 
     fillForm(firstName: string, lastName: string, postalCode: string) {
         cy.get(this.firstNameField).type(firstName);
         cy.get(this.lastNameField).type(lastName);
         cy.get(this.postalCodeField).type(postalCode);
+    }
+
+    fillFormWithoutFirstName(lastName: string, postalCode: string) {
+        cy.get(this.firstNameField).clear();
+        cy.get(this.lastNameField).type(lastName);
+        cy.get(this.postalCodeField).type(postalCode);
+    }
+
+    fillFormWithoutLastName(firstName: string, postalCode: string) {
+        cy.get(this.firstNameField).type(firstName);
+        cy.get(this.lastNameField).clear();
+        cy.get(this.postalCodeField).type(postalCode);
+    }
+
+    fillFormWithoutPostalCode(firstName: string, lastName: string) {
+        cy.get(this.firstNameField).type(firstName);
+        cy.get(this.lastNameField).type(lastName);
+        cy.get(this.postalCodeField).clear()
     }
     
     continue() {
@@ -20,8 +38,8 @@ class CheckoutPage {
         cy.get(this.finishButton).click();
     }
     
-    checkErrorMessage() {
-        cy.get(this.errorMessage).should('be.visible');
+    checkErrorMessage(expectedMessage: string) {
+        cy.get(this.errorMessage).contains(expectedMessage);
     }
 }
 
